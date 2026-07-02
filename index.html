@@ -76,10 +76,27 @@
     }
 
     .navbar-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
       font-family: "Zen Maru Gothic";
       font-weight: 700;
       color: var(--wood) !important;
       font-size: 1.25rem;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .08));
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
     }
 
     .navbar-brand small {
@@ -254,6 +271,15 @@
     }
 
     @media (max-width:767px) {
+      .navbar-brand {
+        gap: .55rem;
+      }
+
+      .brand-logo {
+        width: 44px;
+        height: 44px;
+      }
+
       .hero-photo {
         background-position: 64% center;
       }
@@ -680,10 +706,21 @@
       font-weight: 400;
     }
 
+    
+
     footer {
       background: var(--wood);
       color: #f3e9dd;
       padding: 3rem 0 1.5rem;
+    }
+
+    .footer-brand-logo {
+      width: 112px;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, .16));
     }
 
     footer a {
@@ -737,7 +774,10 @@
 
   <nav class="navbar navbar-expand-md sticky-top py-2">
     <div class="container">
-      <a class="navbar-brand" href="#top">民宿 川原<small>KAWAHARA ｜ 熊本・水上村湯山温泉</small></a>
+      <a class="navbar-brand" href="#top">
+        <img src="images/logo.png" alt="民宿川原 ロゴ" class="brand-logo">
+        <span class="brand-text">民宿 川原<small>KAWAHARA ｜ 熊本・水上村湯山温泉</small></span>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span
           class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="nav">
@@ -1081,7 +1121,7 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-md-5">
-          <div class="disp h4">民宿 川原</div>
+          <img src="images/logo.png" alt="民宿川原 ロゴ" class="footer-brand-logo">
           <p class="small mb-1">〒868-0703 熊本県球磨郡水上村湯山259</p>
           <p class="small mb-0">地下800mから湧き出る温泉と、自家茶園のお茶。<br>昔ながらの本館と、一棟貸しの別館。</p>
         </div>
@@ -1150,3 +1190,9 @@
 </body>
 
 </html>
+
+
+
+
+
+
