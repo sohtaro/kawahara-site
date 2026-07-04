@@ -315,7 +315,7 @@
       }
     }
 
-        @media (max-width:767px) {
+    @media (max-width:767px) {
       :root {
         --anchor-offset: 7.75rem;
       }
@@ -617,6 +617,129 @@
       color: var(--wood-light);
       margin-bottom: .8rem;
     }
+
+    .guide-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 6px 22px rgba(107, 78, 61, .1);
+    }
+
+    .guide-title {
+      color: var(--wood);
+      font-family: "Zen Maru Gothic", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: .35rem 0 .6rem;
+    }
+
+    .guide-intro {
+      color: var(--wood-light);
+      font-size: .95rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .guide-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .guide-item {
+      display: grid;
+      grid-template-columns: minmax(7.5rem, 9rem) minmax(0, 1fr);
+      gap: .9rem;
+      padding: .8rem 0;
+      border-bottom: 1px dashed var(--cream-2);
+      align-items: start;
+    }
+
+    .guide-item:last-child {
+      border-bottom: none;
+    }
+
+    .guide-label {
+      color: var(--wood);
+      font-family: "Zen Maru Gothic", sans-serif;
+      font-weight: 700;
+    }
+
+    .guide-value {
+      color: var(--sumi);
+    }
+
+    .guide-divider {
+      margin: 1.4rem 0 1rem;
+      border-top: 1px dashed var(--cream-2);
+    }
+
+    .guide-subtitle {
+      color: var(--wood);
+      font-family: "Zen Maru Gothic", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: .9rem;
+    }
+
+    .amenity-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .65rem .9rem;
+    }
+
+    @media(min-width:576px) {
+      .amenity-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .amenity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+
+    .amenity-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .82rem;
+      flex: 0 0 auto;
+      margin-top: .08rem;
+    }
+
+    .amenity-mark.ok {
+      background: rgba(95, 122, 79, .14);
+      color: var(--mori-deep);
+    }
+
+    .amenity-mark.ng {
+      background: rgba(217, 119, 47, .14);
+      color: #9a5d2d;
+    }
+
+    .guide-note-block {
+      margin-top: 1rem;
+      font-size: .85rem;
+      color: var(--wood-light);
+    }
+
+    @media (max-width:575px) {
+      .guide-card {
+        padding: 1.5rem;
+      }
+
+      .guide-item {
+        grid-template-columns: 1fr;
+        gap: .2rem;
+      }
+    }
+
 
     /* ===== Instagram お知らせ ===== */
     .ig-grid {
@@ -1077,6 +1200,58 @@
     </div>
   </section>
 
+  <section class="section" id="guide">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="guide-card">
+            <div class="eyebrow">GUIDE ｜ ご利用案内</div>
+            <h2 class="guide-title">ご予約前のご案内</h2>
+            <p class="guide-intro">チェックインやお支払い、アメニティなどをまとめています。</p>
+
+            <div class="guide-list">
+              <div class="guide-item"><span class="guide-label">チェックイン</span><span class="guide-value">15:00〜</span>
+              </div>
+              <div class="guide-item"><span class="guide-label">チェックアウト</span><span class="guide-value">〜10:00</span>
+              </div>
+              <div class="guide-item"><span class="guide-label">駐車場</span><span class="guide-value">要確認。</span></div>
+              <div class="guide-item"><span class="guide-label">Wi-Fi</span><span class="guide-value">あり</span></div>
+              <div class="guide-item"><span class="guide-label">お支払い</span><span class="guide-value">現金・クレジットカード</span>
+              </div>
+              <div class="guide-item"><span class="guide-label">BBQ</span><span class="guide-value">利用可・要予約。機材あり</span>
+              </div>
+              <div class="guide-item"><span class="guide-label">キャンセル方針</span><span class="guide-value">要確認。</span>
+              </div>
+            </div>
+
+            <div class="guide-divider"></div>
+            <h3 class="guide-subtitle">アメニティ</h3>
+            <div class="amenity-grid">
+              <div class="amenity-item"><span class="amenity-mark ok">○</span><span>ハンドタオル</span></div>
+              <div class="amenity-item"><span class="amenity-mark ng">×</span><span>ボディソープ</span></div>
+              <div class="amenity-item"><span class="amenity-mark ok">○</span><span>ドライヤー</span></div>
+              <div class="amenity-item"><span class="amenity-mark ng">×</span><span>温水洗浄トイレ</span></div>
+              <div class="amenity-item"><span class="amenity-mark ok">○</span><span>歯ブラシ・歯磨き粉</span></div>
+              <div class="amenity-item"><span class="amenity-mark ng">×</span><span>石けん</span></div>
+              <div class="amenity-item"><span class="amenity-mark ok">○</span><span>羽毛布団</span></div>
+              <div class="amenity-item"><span class="amenity-mark ok">○</span><span>くし・ブラシ</span></div>
+              <div class="amenity-item"><span class="amenity-mark ok">○</span><span>バスタオル</span></div>
+              <div class="amenity-item"><span class="amenity-mark ok">○</span><span>浴衣</span></div>
+              <div class="amenity-item"><span class="amenity-mark ng">×</span><span>髭剃り</span></div>
+              <div class="amenity-item"><span class="amenity-mark ng">×</span><span>シャンプー（リンスインシャンプー含む）</span></div>
+              <div class="amenity-item"><span class="amenity-mark ng">×</span><span>パジャマ</span></div>
+              <div class="amenity-item"><span class="amenity-mark ng">×</span><span>シャワーキャップ</span></div>
+              <div class="amenity-item"><span class="amenity-mark ng">×</span><span>リンス</span></div>
+              <div class="amenity-item"><span class="amenity-mark ng">×</span><span>バスローブ</span></div>
+              <div class="amenity-item"><span class="amenity-mark ok">○</span><span>綿棒</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ===== Instagram お知らせ ===== -->
   <section class="section" id="news">
     <div class="container">
@@ -1218,7 +1393,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+  <script>
     function getScrollAnchor(hash) {
       if (!hash || hash === '#') return null;
       var section = document.querySelector(hash);
@@ -1289,7 +1464,3 @@
 </body>
 
 </html>
-
-
-
-
