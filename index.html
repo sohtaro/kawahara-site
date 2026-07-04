@@ -757,6 +757,35 @@
     .ig-thumb {
       aspect-ratio: 1/1;
     }
+    .ig-grid-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 16px;
+    }
+
+    .ig-grid-link .ig-grid {
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .ig-grid-link:hover .ig-grid,
+    .ig-grid-link:focus-visible .ig-grid {
+      transform: translateY(-2px);
+      opacity: .94;
+    }
+
+    .ig-grid-link:focus-visible {
+      outline: 2px solid var(--kaki);
+      outline-offset: 6px;
+    }
+
+    .ig-grid-link-note {
+      margin-top: .7rem;
+      font-size: .85rem;
+      color: var(--wood-light);
+      text-align: center;
+    }
+
 
     .ig-embed-note {
       background: #fff;
@@ -1254,12 +1283,16 @@
         <h2 class="section-title">最新のようすはInstagramで</h2>
         <p>季節の風景や日々のようすはInstagramで、最新のお知らせやお問い合わせはLINE公式アカウントでもご案内しています。</p>
       </div>
-      <div class="ig-grid mb-3">
-        <div class="ig-thumb"><img loading="lazy" decoding="async" src="images/honkan.jpg" alt="民宿川原の外観"></div>
-        <div class="ig-thumb"><img loading="lazy" decoding="async" src="images/meal.jpg" alt="本館食堂のお料理"></div>
-        <div class="ig-thumb"><img loading="lazy" decoding="async" src="images/okefuro.jpg" alt="源泉かけ流しの桶風呂"></div>
-        <div class="ig-thumb"><img loading="lazy" decoding="async" src="images/syokuzai.jpg" alt="地元の食材"></div>
-      </div>
+      <a href="https://www.instagram.com/okaeri_kawahara/" class="ig-grid-link mb-3" target="_blank"
+        rel="noopener noreferrer" aria-label="Instagramを見る">
+        <div class="ig-grid">
+          <div class="ig-thumb"><img loading="lazy" decoding="async" src="images/honkan.jpg" alt="民宿川原の外観"></div>
+          <div class="ig-thumb"><img loading="lazy" decoding="async" src="images/meal.jpg" alt="本館食堂のお料理"></div>
+          <div class="ig-thumb"><img loading="lazy" decoding="async" src="images/okefuro.jpg" alt="源泉かけ流しの桶風呂"></div>
+          <div class="ig-thumb"><img loading="lazy" decoding="async" src="images/syokuzai.jpg" alt="地元の食材"></div>
+        </div>
+        <div class="ig-grid-link-note">4枚まとめてInstagramへ移動します</div>
+      </a>
       <div class="social-links mb-4">
         <div class="social-link-card">
           <div class="social-link-head">
@@ -1458,5 +1491,6 @@
 </body>
 
 </html>
+
 
 
