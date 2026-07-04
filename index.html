@@ -315,6 +315,9 @@
     }
 
     @media (max-width:767px) {
+      html {
+        scroll-padding-top: 7.75rem;
+      }
       .navbar-brand {
         gap: .55rem;
       }
@@ -326,6 +329,10 @@
 
       .hero-photo {
         background-position: 64% center;
+
+      .section {
+        scroll-margin-top: 7.75rem;
+      }
       }
     }
 
@@ -1214,10 +1221,34 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.querySelectorAll('#nav .nav-link, #nav .btn').forEach(function (a) {
-      a.addEventListener('click', function () {
+    function scrollToAnchor(hash) {
+      if (!hash || hash === '#') return;
+      var target = document.querySelector(hash);
+      if (!target) return;
+      var navBar = document.querySelector('.navbar');
+      var navHeight = navBar ? navBar.getBoundingClientRect().height : 0;
+      var extraOffset = window.innerWidth < 768 ? 24 : 12;
+      var top = window.pageYOffset + target.getBoundingClientRect().top - navHeight - extraOffset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('#nav .nav-link, #nav .btn, footer a[href^="#"], .mobile-cta a[href^="#"], .navbar-brand[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var hash = a.getAttribute('href');
+        if (!hash || hash === '#') return;
+        var target = document.querySelector(hash);
+        if (!target) return;
+        e.preventDefault();
         var n = document.getElementById('nav');
-        if (n.classList.contains('show')) { new bootstrap.Collapse(n).hide(); }
+        if (n.classList.contains('show')) {
+          n.addEventListener('hidden.bs.collapse', function handleHidden() {
+            n.removeEventListener('hidden.bs.collapse', handleHidden);
+            scrollToAnchor(hash);
+          });
+          bootstrap.Collapse.getOrCreateInstance(n).hide();
+          return;
+        }
+        scrollToAnchor(hash);
       });
     });
     // ギャラリー ライトボックス
@@ -1238,5 +1269,6 @@
 </body>
 
 </html>
+
 
 
